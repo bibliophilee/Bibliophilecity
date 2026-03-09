@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Global E-Library</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>Global E-Library 📚</h1>
+    <p>A free library for books, journals, and knowledge</p>
+</header>
+
+<div class="search-box">
+    <input type="text" id="search" placeholder="Search for books..." onkeyup="searchBooks()">
+</div>
+
+<div class="container" id="library">
+
+    <div class="book">
+        <img src="https://via.placeholder.com/120x160?text=Atomic+Habits" alt="Atomic Habits">
+        <h3>Atomic Habits</h3>
+        <p class="category">Self Development</p>
+        <p>Author: James Clear</p>
+        <a href="books/atomic-habits.pdf" target="_blank"><button>Read / Download</button></a>
+    </div>
+
+    <div class="book">
+        <img src="https://via.placeholder.com/120x160?text=Pride+and+Prejudice" alt="Pride and Prejudice">
+        <h3>Pride and Prejudice</h3>
+        <p class="category">Novel</p>
+        <p>Author: Jane Austen</p>
+        <a href="books/pride-prejudice.pdf" target="_blank"><button>Read / Download</button></a>
+    </div>
+
+    <div class="book">
+        <img src="https://via.placeholder.com/120x160?text=Chemistry" alt="Introduction to Chemistry">
+        <h3>Introduction to Chemistry</h3>
+        <p class="category">Science</p>
+        <p>Author: OpenStax</p>
+        <a href="books/chemistry.pdf" target="_blank"><button>Read / Download</button></a>
+    </div>
+
+    <div class="book">
+        <img src="https://via.placeholder.com/120x160?text=Art+of+War" alt="The Art of War">
+        <h3>The Art of War</h3>
+        <p class="category">History</p>
+        <p>Author: Sun Tzu</p>
+        <a href="books/art-of-war.pdf" target="_blank"><button>Read / Download</button></a>
+    </div>
+
+</div>
+
+<footer>
+    <p>Global E-Library | Free knowledge for everyone</p>
+</footer>
+
+<script>
+function searchBooks() {
+    let input = document.getElementById("search").value.toLowerCase();
+    let books = document.getElementsByClassName("book");
+    for (let i = 0; i < books.length; i++) {
+        let text = books[i].innerText.toLowerCase();
+        books[i].style.display = text.includes(input) ? "block" : "none";
+    }
+}
+</script>
+
+</body>
+</html>
