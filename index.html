@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Global E-Library</title>
+
+<style>
+
+body{
+font-family: Arial;
+margin:0;
+background:#f4f4f4;
+}
+
+header{
+background:#2c3e50;
+color:white;
+padding:20px;
+text-align:center;
+}
+
+.search-box{
+text-align:center;
+margin:20px;
+}
+
+input{
+padding:10px;
+width:60%;
+font-size:16px;
+}
+
+.container{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+}
+
+.book{
+background:white;
+width:250px;
+margin:15px;
+padding:15px;
+border-radius:8px;
+box-shadow:0 2px 5px rgba(0,0,0,0.2);
+}
+
+.book h3{
+margin-top:0;
+}
+
+.category{
+color:gray;
+font-size:14px;
+}
+
+button{
+padding:10px;
+border:none;
+background:#3498db;
+color:white;
+border-radius:5px;
+cursor:pointer;
+}
+
+button:hover{
+background:#2980b9;
+}
+
+footer{
+background:#2c3e50;
+color:white;
+text-align:center;
+padding:10px;
+margin-top:20px;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Global E-Library 📚</h1>
+<p>A free library for books, journals, and knowledge</p>
+</header>
+
+<div class="search-box">
+<input type="text" id="search" placeholder="Search for books..." onkeyup="searchBooks()">
+</div>
+
+<div class="container" id="library">
+
+<div class="book">
+<h3>Atomic Habits</h3>
+<p class="category">Self Development</p>
+<p>Author: James Clear</p>
+<a href="books/atomic-habits.pdf">
+<button>Read / Download</button>
+</a>
+</div>
+
+<div class="book">
+<h3>Pride and Prejudice</h3>
+<p class="category">Novel</p>
+<p>Author: Jane Austen</p>
+<a href="books/pride-prejudice.pdf">
+<button>Read / Download</button>
+</a>
+</div>
+
+<div class="book">
+<h3>Introduction to Chemistry</h3>
+<p class="category">Science</p>
+<p>Author: OpenStax</p>
+<a href="books/chemistry.pdf">
+<button>Read / Download</button>
+</a>
+</div>
+
+<div class="book">
+<h3>The Art of War</h3>
+<p class="category">History</p>
+<p>Author: Sun Tzu</p>
+<a href="books/art-of-war.pdf">
+<button>Read / Download</button>
+</a>
+</div>
+
+</div>
+
+<footer>
+<p>Global E-Library | Free knowledge for everyone</p>
+</footer>
+
+<script>
+
+function searchBooks(){
+
+let input = document.getElementById("search").value.toLowerCase();
+let books = document.getElementsByClassName("book");
+
+for(let i=0;i<books.length;i++){
+
+let text = books[i].innerText.toLowerCase();
+
+if(text.includes(input)){
+books[i].style.display="block";
+}
+else{
+books[i].style.display="none";
+}
+
+}
+
+}
+
+</script>
+
+</body>
+</html>
